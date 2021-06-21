@@ -2,7 +2,7 @@
   "name": "aiterator",
   "version": "1.0.0",
   "description": "The power of javascript Arrays and Weakmaps together",
-  "main": "./dist/index.js",
+  "main": "index.js",
   "scripts": {
     "clean": "rimraf ./dist",
     "build": "npm run clean && tsc",
