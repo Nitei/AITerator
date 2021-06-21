@@ -20,7 +20,8 @@ export abstract class Loader {
       throw new Error( `La key ${ this.key } no exite en el item` );
 
     this.iterable.forEach( item => {
-      this.iterante.push( this.createItem( item ) );
+      if ( this.has( item[ this.key ] ) ) return;
+        this.iterante.push( this.createItem( item ) );
     } );
   }
 

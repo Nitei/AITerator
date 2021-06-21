@@ -2,11 +2,17 @@
   "name": "aiterator",
   "version": "1.0.0",
   "description": "The power of javascript Arrays and Weakmaps together",
-  "main": "index.js",
+  "main": "./dist/index.js",
   "scripts": {
-    "build": "tsc",
+    "clean": "rimraf ./dist",
+    "build": "npm run clean && tsc",
+    "try": "node ./dist/index.js",
+    "retry": "npm run build && node ./dist/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Jorge Jesús Campoy López",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "rimraf": "^3.0.2"
+  }
 }

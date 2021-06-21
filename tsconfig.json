@@ -2,6 +2,9 @@
   "compilerOptions": {
     "target": "es6",
     "outDir": "./dist",
+    "module": "commonjs",
+    "sourceMap": true,
+    "declaration": true,
     "lib": ["es2019", "DOM"]
   },
   "exclude": [
