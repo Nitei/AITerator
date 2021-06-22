@@ -1,6 +1,6 @@
 {
   "name": "aiterator",
-  "version": "1.9.0",
+  "version": "1.10.0",
   "description": "The power of javascript Arrays and Weakmaps together",
   "main": "./dist/AITerator.d.ts",
   "scripts": {

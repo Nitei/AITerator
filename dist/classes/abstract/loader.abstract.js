@@ -40,6 +40,13 @@ class Loader {
     putOut(method) {
         this.iterante[method]();
     }
+    seek(key) {
+        const elRef = this.iterante.findIndex(el => el.key === key);
+        return {
+            idx: elRef,
+            value: elRef >= 0 ? this.iterante[elRef].item : null
+        };
+    }
     clear() {
         this.iterante = [];
     }
@@ -51,13 +58,6 @@ class Loader {
         else {
             console.error('No existe el objeto a borrar');
         }
-    }
-    seek(key) {
-        const elRef = this.iterante.findIndex(el => el.key === key);
-        return {
-            idx: elRef,
-            value: elRef >= 0 ? this.iterante[elRef].item : null
-        };
     }
     has(key) {
         return this.seek(key).idx >= 0;

@@ -8,12 +8,9 @@ export declare abstract class Loader {
     private createItem;
     private putIn;
     private putOut;
+    private seek;
     clear(): void;
     delete(key: any): boolean;
-    seek(key: any): {
-        idx: number;
-        value: any;
-    };
     has(key: any): boolean;
     get(key: any): any;
     unshift(item: any): void;
