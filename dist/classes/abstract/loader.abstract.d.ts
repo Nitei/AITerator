@@ -3,14 +3,11 @@ export declare abstract class Loader {
     key: number | string;
     protected iterante: any[];
     constructor(iterable?: any[], key?: number | string);
-    protected fillIterable(): void;
-    protected checkItemHasKey(item: any): boolean;
-    protected createItem(newItem: any): {
-        item: any;
-        key: any;
-    };
-    protected putIn(item: any, method: 'push' | 'unshift'): void;
-    protected putOut(method: 'pop' | 'shift'): void;
+    private fillIterable;
+    private checkItemHasKey;
+    private createItem;
+    private putIn;
+    private putOut;
     clear(): void;
     delete(key: any): boolean;
     seek(key: any): {
