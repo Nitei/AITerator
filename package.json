@@ -1,12 +1,11 @@
 {
   "name": "aiterator",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "description": "The power of javascript Arrays and Weakmaps together",
   "main": "./dist/AITerator.d.ts",
   "scripts": {
     "clean": "rimraf ./dist",
     "build": "npm run clean && tsc",
-    "publish": "npm run clean && tsc && npm publish",
     "try": "node ./index.js",
     "retry": "npm run build && node ./index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
