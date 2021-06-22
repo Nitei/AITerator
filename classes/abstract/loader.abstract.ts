@@ -21,7 +21,7 @@ export abstract class Loader {
 
     this.iterable.forEach( item => {
       if ( this.has( item[ this.key ] ) ) return;
-        this.iterante.push( this.createItem( item ) );
+      this.iterante.push( this.createItem( item ) );
     } );
   }
 
@@ -43,6 +43,13 @@ export abstract class Loader {
   private putOut( method: 'pop' | 'shift' ) {
     this.iterante[ method ]();
   }
+  private seek( key ) {
+    const elRef = this.iterante.findIndex( el => el.key === key );
+    return {
+      idx: elRef,
+      value: elRef >= 0 ? this.iterante[ elRef ].item : null
+    };
+  }
 
   clear() {
     this.iterante = [];
@@ -55,13 +62,7 @@ export abstract class Loader {
       console.error( 'No existe el objeto a borrar' );
     }
   }
-  seek( key ) {
-    const elRef = this.iterante.findIndex( el => el.key === key );
-    return {
-      idx: elRef,
-      value: elRef >= 0 ? this.iterante[ elRef ].item : null
-    };
-  }
+
   has( key ) {
     return this.seek( key ).idx >= 0;
   }
