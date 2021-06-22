@@ -5,7 +5,8 @@
   "main": "./dist/AITerator.d.ts",
   "scripts": {
     "clean": "rimraf ./dist",
-    "build": "npm run clean && tsc && npm publish",
+    "build": "npm run clean && tsc",
+    "publish": "npm run clean && tsc && npm publish",
     "try": "node ./index.js",
     "retry": "npm run build && node ./index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
