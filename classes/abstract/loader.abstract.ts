@@ -9,7 +9,7 @@ export abstract class Loader {
     delete this.iterable;
   }
 
-  protected fillIterable() {
+  private fillIterable() {
     if (
       !Array.isArray( this.iterable ) ||
       this.iterable.length === 0 ||
@@ -25,22 +25,22 @@ export abstract class Loader {
     } );
   }
 
-  protected checkItemHasKey( item ) {
+  private checkItemHasKey( item ) {
     return Object.keys( item ).includes( this.key.toString() );
   }
 
-  protected createItem( newItem ) {
+  private createItem( newItem ) {
     return {
       item: newItem,
       key: newItem[ this.key ]
     };
   }
-  protected putIn( item, method: 'push' | 'unshift' ) {
+  private putIn( item, method: 'push' | 'unshift' ) {
     if ( !this.has( item[ this.key ] ) ) {
       this.iterante[ method ]();
     } else console.error( `La key ${ item[ this.key ] } ya existe` );
   }
-  protected putOut( method: 'pop' | 'shift' ) {
+  private putOut( method: 'pop' | 'shift' ) {
     this.iterante[ method ]();
   }
 
