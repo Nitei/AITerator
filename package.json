@@ -6,9 +6,8 @@
   "scripts": {
     "clean": "rimraf ./dist",
     "build": "npm run clean && tsc",
-    "try": "node ./index.js",
-    "retry": "npm run build && node ./index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "try": "node ./dist/mini-test/push.js",
+    "test": "npm run build && npm run try"
   },
   "author": "Jorge Jesús Campoy López",
   "license": "ISC",

@@ -9,12 +9,13 @@ export declare abstract class Loader {
     private putIn;
     private putOut;
     private seek;
+    /** Clear the array */
     clear(): void;
     delete(key: any): boolean;
     has(key: any): boolean;
     get(key: any): any;
-    unshift(item: any): void;
-    push(item: any): void;
+    unshift(...item: any[]): void;
+    push(...item: any[]): void;
     shift(): void;
     pop(): void;
     value(): {

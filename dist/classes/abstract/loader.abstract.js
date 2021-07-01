@@ -30,12 +30,14 @@ class Loader {
             key: newItem[this.key]
         };
     }
-    putIn(item, method) {
-        if (!this.has(item[this.key])) {
-            this.iterante[method]();
-        }
-        else
-            console.error(`La key ${item[this.key]} ya existe`);
+    putIn(obj) {
+        if (!obj || !obj.items || obj.items.length === 0)
+            return console.error(`El la lista de objetos esta vacia`);
+        obj.items.forEach(item => {
+            if (this.has(item[this.key]))
+                return console.error(`La key ${obj.items[this.key]} ya existe`);
+            this.iterante[obj.method](this.createItem(item));
+        });
     }
     putOut(method) {
         this.iterante[method]();
@@ -47,6 +49,7 @@ class Loader {
             value: elRef >= 0 ? this.iterante[elRef].item : null
         };
     }
+    /** Clear the array */
     clear() {
         this.iterante = [];
     }
@@ -65,11 +68,11 @@ class Loader {
     get(key) {
         return this.seek(key).value;
     }
-    unshift(item) {
-        this.putIn(item, 'unshift');
+    unshift(...item) {
+        this.putIn({ items: item, method: 'unshift' });
     }
-    push(item) {
-        this.putIn(item, 'push');
+    push(...item) {
+        this.putIn({ items: item, method: 'push' });
     }
     shift() {
         this.putOut('shift');
