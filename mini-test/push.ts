@@ -20,5 +20,11 @@ console.log( '=======================' )
 arrayItems.unshift( { num: 6 }, { num: 8 }, { num: 9 }, { num: 9 }, { num: 1 })
 console.log( arrayItems.getIterable() )
 
+console.log( '=======================' )
+console.log( '=======================' )
+console.log( '=======================' )
+
+arrayItems.pop(3)
+console.log( arrayItems.getIterable() )
 
 
