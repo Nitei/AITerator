@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "rimraf ./dist",
     "build": "npm run clean && tsc",
-    "try": "node ./mini-test/push.js",
+    "try": "node ./mini-test/test.js",
     "test": "npm run build && npm run try"
   },
   "author": "Jorge Jesús Campoy López",
