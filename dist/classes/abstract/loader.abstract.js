@@ -39,8 +39,10 @@ class Loader {
             this.iterante[obj.method](this.createItem(item));
         });
     }
-    putOut(method) {
-        this.iterante[method]();
+    putOut(howMany, method) {
+        for (let index = 0; index < howMany; index++) {
+            this.iterante[method]();
+        }
     }
     seek(key) {
         const elRef = this.iterante.findIndex(el => el.key === key);
@@ -74,11 +76,11 @@ class Loader {
     push(...item) {
         this.putIn({ items: item, method: 'push' });
     }
-    shift() {
-        this.putOut('shift');
+    shift(howMany = 1) {
+        this.putOut(howMany, 'shift');
     }
-    pop() {
-        this.putOut('pop');
+    pop(howMany = 1) {
+        this.putOut(howMany, 'pop');
     }
     value() {
         return { iterante: this.iterante, key: this.key };

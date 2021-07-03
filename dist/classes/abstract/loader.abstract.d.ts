@@ -16,8 +16,8 @@ export declare abstract class Loader {
     get(key: any): any;
     unshift(...item: any[]): void;
     push(...item: any[]): void;
-    shift(): void;
-    pop(): void;
+    shift(howMany?: number): void;
+    pop(howMany?: number): void;
     value(): {
         iterante: any[];
         key: string | number;
